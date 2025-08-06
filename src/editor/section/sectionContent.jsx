@@ -1,6 +1,6 @@
 const detailItems = ["First Name", "Last Name", "Email", "Phone Number", "City", "LinkedIn"];
 
-const DetailsBody = () => (
+const PersonalDetails = () => (
   <section className="flex flex-col gap-2">
     {detailItems.map((item, index) => (
       <div key={index} className="flex items-center justify-between">
@@ -16,18 +16,18 @@ const DetailsBody = () => (
   </section>
 );
 
-export const ProfileBody = () => (
+export const Summary = () => (
   <section>
     <label>Summary</label>
     <textarea className="border w-full h-40 p-2" />
   </section>
 );
 
-export const ExperienceBody = () => (
+export const WorkExperience = () => (
   <section>
     <label>Experiences</label>
     <textarea className="border w-full h-40 p-2" />
   </section>
 );
 
-export default DetailsBody;
+export default PersonalDetails;

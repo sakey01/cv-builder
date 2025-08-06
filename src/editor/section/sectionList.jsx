@@ -1,23 +1,23 @@
 import { useState } from "react";
-import DetailsBody from "./sectionBody";
-import { ProfileBody, ExperienceBody } from "./sectionBody";
-import {CaretRight} from 'phosphor-react';
+import PersonalDetails from "./sectionContent";
+import {  Summary, WorkExperience } from "./sectionContent";
+import { CaretRight } from "phosphor-react";
 
 const sectionTitles = [
-  "Details",
-  "Profile",
-  "Experiences",
+  "Personal Details",
+  "Summary",
+  "Work Experience",
   "Education",
   "Skills",
   "Projects",
-  "Certificates",
+  "Certifications",
   "Volunteering",
 ];
 
 const SectionComponents = {
-  Details: DetailsBody,
-  Profile: ProfileBody,
-  Experiences: ExperienceBody,
+  "Personal Details": PersonalDetails,
+  Summary: Summary,
+  "Work Experience": WorkExperience,
 };
 
 const SectionHeaders = () => {

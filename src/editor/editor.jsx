@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, DownloadSimple } from "phosphor-react";
 import Navigation from "../components/navigation";
-import SectionHead from "./section/sectionHead";
+import SectionHead from "./section/sectionList";
 import Preview from "./preview";
 
-// ---- Main Page
+// ---- Main Page -------
 const Editor = () => {
   const [title, setTitle] = useState("Untitled CV");
 
@@ -14,7 +14,8 @@ const Editor = () => {
       <Navigation />
 
       <main className="flex flex-col w-full px-8 py-4">
-        {/* Header */}
+
+        {/* ---------- Header ----------*/}
         <header className="flex items-center justify-between mb-16 w-full">
           <div className="flex items-center w-full">
             <Link to="/">
@@ -29,24 +30,24 @@ const Editor = () => {
               placeholder="CV Title"
             />
           </div>
-
+          {/* ------ Right-side Header ------ */}
           <button className="flex items-center gap-2 btn">
             <DownloadSimple />
             Download
           </button>
         </header>
 
-        {/* Content */}
+        {/* ------- Content -------- */}
         <div className="grid grid-cols-[1fr_1fr] gap-8">
           <div>
             <div className="flex gap-4 mb-8">
               <button className="btn bg-stone-600">Edit Content</button>
               <button className="btn">Design</button>
             </div>
-            {/* Section title list*/}
+            {/* ------- Section title list ------- */}
             <SectionHead />
           </div>
-          {/* CV page preview */}
+          {/* ------- CV page preview ------- */}
           <Preview />
         </div>
       </main>
