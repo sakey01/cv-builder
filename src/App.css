@@ -15,5 +15,5 @@ html {
 }
 
 .btn {
-  @apply cursor-pointer px-2 py-1 border rounded border-stone-600;
+  @apply cursor-pointer px-2 py-1 border rounded border-stone-600 hover:bg-stone-600;
 }

@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/home";
-import CreateCV from "./components/createCV";
+import Home from "./home/home";
+import Editor from "./editor/editor";
 
 /* Requirements:
   - need to be able to build a resume
@@ -20,12 +20,10 @@ import CreateCV from "./components/createCV";
 
 export default function App() {
   return (
-    // <div className="flex min-h-screen">
-
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/createCV" element={<CreateCV />} />
+        <Route path="/editor" element={<Editor />} />
       </Routes>
     </Router>
   );
