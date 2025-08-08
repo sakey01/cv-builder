@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PersonalDetails, {  Summary, WorkExperience } from "./content";
 import { CaretRight } from "phosphor-react";
+import { PersonalDetails, Summary, WorkExperience } from "./sectionForm";
 
 const sectionTitles = [
   "Personal Details",
@@ -13,24 +13,24 @@ const sectionTitles = [
   "Volunteering",
 ];
 
-// ----- Maps title list into components ------
+// Key value pair for section titles
 const SectionComponents = {
   "Personal Details": PersonalDetails,
-  Summary: Summary,
+  Summary,
   "Work Experience": WorkExperience,
 };
-// ----- Title for each section which can be toggled to display components assigned -------
-const List = () => {
-  const [isOpen, setIsOpen] = useState(null);
 
-  // ------ Index matching to correctly display components -------
+const CVSectionList = () => {
+  const [isOpen, setIsOpen] = useState(null);
+  const [formData, setFormData] = useState({});
+
+  // Toggle visibilty of title content
   const toggle = (index) => {
     setIsOpen(isOpen === index ? null : index);
   };
 
-
-  // ------ Maping titles into compnents ------
   return (
+    // Map title to components
     <div className="flex flex-col gap-6 w-full">
       {sectionTitles.map((title, index) => (
         <div key={index} className="flex flex-col gap-4">
@@ -38,7 +38,6 @@ const List = () => {
             onClick={() => toggle(index)}
             className="flex items-center gap-4 cursor-pointer transition duration-300 hover:underline"
           >
-            {/* ----- Rotate the arrow down on open ----- */}
             <span
               className={`transition-transform duration-300 ${
                 isOpen === index ? "rotate-90" : "rotate-0"
@@ -49,11 +48,12 @@ const List = () => {
             {title}
           </button>
 
-          {/* ------ Conditinoally display the content under title ----- */}
+          {/* Conditionally render components if the index matches */}
           {isOpen === index &&
+            SectionComponents[title] &&
             (() => {
               const Component = SectionComponents[title];
-              return Component ? <Component /> : null;
+              return <Component data={formData} setData={setFormData} />;
             })()}
 
           <hr className="text-stone-600 opacity-60" />
@@ -63,4 +63,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default CVSectionList;
