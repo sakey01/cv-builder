@@ -7,13 +7,16 @@ const navItems = [
   { icon: FileText, path: "/editor" },
 ];
 
-const Navigation = () => {
+const Navigation = ({ height }) => {
   return (
     <aside>
-      <nav className="flex flex-col w-max h-full p-2 gap-4 bg-stone-700 border-r border-stone-500">
+      <nav
+        className={`flex flex-col w-max p-2 gap-4 bg-stone-700 border-r border-stone-500 ${height}`}
+      >
+        {/* ----- Mapping icons and paths for each object in navItems ----- */}
         {navItems.map(({ icon, path }, index) => (
           <Link key={index} to={path} className="text-2xl text-white">
-               {React.createElement(icon)}
+            {React.createElement(icon)}
           </Link>
         ))}
       </nav>

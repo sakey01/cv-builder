@@ -1,7 +1,7 @@
-A CV builder - in progress
+## A CV builder - in progress
 
 Built with React, Tailwind CSS and Vite.
 
-## Dependancies
+### Dependancies
 - React-router
 - Phosphor-react
