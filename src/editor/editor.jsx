@@ -1,6 +1,6 @@
 import Header from "./header";
 import Navigation from "../components/navigation";
-import List from "./cvSectionList";
+import CVSectionList from "./toggleSectionForm";
 import Canvas from "./canvas";
 
 const Editor = () => {
@@ -19,7 +19,7 @@ const Editor = () => {
               <button className="btn">Design</button>
             </div>
 
-            <List />
+            <CVSectionList />
           </div>
 
           {/* A4 Preview page */}

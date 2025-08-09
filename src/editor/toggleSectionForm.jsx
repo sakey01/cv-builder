@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CaretRight } from "phosphor-react";
-import { PersonalDetails, Summary, WorkExperience } from "./sectionForm";
+import { PersonalDetails, Summary, WorkExperience } from "./cvSectionForm";
 
 const sectionTitles = [
   "Personal Details",
@@ -24,7 +24,7 @@ const CVSectionList = () => {
   const [isOpen, setIsOpen] = useState(null);
   const [formData, setFormData] = useState({});
 
-  // Toggle visibilty of title content
+  // Function to toggle visibilty of section content
   const toggle = (index) => {
     setIsOpen(isOpen === index ? null : index);
   };
