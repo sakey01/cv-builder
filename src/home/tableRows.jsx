@@ -3,10 +3,7 @@ import { PencilSimple, CopySimple, Trash } from "phosphor-react";
 
 const actions = [PencilSimple, CopySimple, Trash];
 
-const CVs = [
-  { name: "cv1", created: "01/01/2025", updated: "01/01/2025" },
-  { name: "cv2", created: "05/03/2025", updated: "06/04/2025" },
-];
+const CVs = [];
 
 const TableRows = () => {
   const navigate = useNavigate();
